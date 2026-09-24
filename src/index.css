@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #172223;
+  --color-bg-deep: #0C1516;
+  --color-surface-dark: #203032;
+  --color-surface-light: #F2F8F6;
+
+  --color-primary: #24B7AB;
+  --color-primary-dark: #128A83;
+  --color-accent: #5BEA68;
+  --color-secondary: #3792D3;
+
+  --color-text-light: #F3F7F5;
+  --color-text-muted: #AABAB7;
+  --color-text-dark: #162425;
+
+  --color-border-dark: #334546;
+  --color-border-light: #D5E4E1;
+
+  --font-sans: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
+  --background-dark: #172223;
+  --background-deep: #0C1516;
+  --surface-dark: #203032;
+  --surface-light: #F2F8F6;
+
+  --primary: #24B7AB;
+  --primary-dark: #128A83;
+  --accent: #5BEA68;
+  --secondary: #3792D3;
+
+  --text-light: #F3F7F5;
+  --text-muted: #AABAB7;
+  --text-dark: #162425;
+
+  --border-dark: #334546;
+  --shadow-dark: rgba(0, 0, 0, 0.28);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #5BEA68 0%,
+    #24B7AB 100%
+  );
+
+  --gradient-background: linear-gradient(
+    135deg,
+    #0C1516 0%,
+    #172223 55%,
+    #123130 100%
+  );
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #162425;
+    background-color: #FFFFFF;
+    line-height: 1.65;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+    color: #162425;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+/* Gradients */
+.bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+
+.bg-gradient-background {
+  background-image: var(--gradient-background);
+}
+
+/* Eye live pulse animation */
+@keyframes eye-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+.animate-eye-pulse {
+  animation: eye-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Corporate Healthcare UI Helpers */
+.pharma-card {
+  background-color: #FFFFFF;
+  border: 1px solid #D5E4E1;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px -2px rgba(22, 36, 37, 0.04), 0 1px 4px -1px rgba(22, 36, 37, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pharma-card:hover {
+  border-color: #24B7AB;
+  box-shadow: 0 12px 24px -6px rgba(36, 183, 171, 0.15), 0 4px 8px -2px rgba(22, 36, 37, 0.04);
+}
+
+.pharma-badge-blue {
+  background-color: #F2F8F6;
+  color: #128A83;
+  border: 1px solid rgba(36, 183, 171, 0.25);
+}
+
+.pharma-badge-green {
+  background-color: #E8FBF0;
+  color: #128A83;
+  border: 1px solid rgba(91, 234, 104, 0.3);
+}
+
+.pharma-btn-primary {
+  background-color: #24B7AB;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.pharma-btn-primary:hover {
+  background-color: #128A83;
+  box-shadow: 0 4px 14px rgba(36, 183, 171, 0.28);
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F2F8F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #24B7AB;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #128A83;
+}

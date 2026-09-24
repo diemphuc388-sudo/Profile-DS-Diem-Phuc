@@ -1,0 +1,8 @@
+{
+  "name": "Remix Dược Sĩ Diễm Phúc – Đồng Hành Xây Dựng Nhà Thuốc Hiện Đại",
+  "description": "Trang cá nhân chính thức của Dược sĩ Diễm Phúc. Hành trình từ dược sĩ truyền thống đến ứng dụng AI, công nghệ và xây dựng cộng đồng nhà thuốc hiện đại.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
