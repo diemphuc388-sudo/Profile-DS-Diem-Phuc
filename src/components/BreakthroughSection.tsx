@@ -45,13 +45,10 @@ export const BreakthroughSection: React.FC = () => {
             <div className="bg-[#203032] p-6 sm:p-8 rounded-2xl border border-[#334546] space-y-4">
               <div className="flex items-center gap-3 text-sm font-semibold text-[#5BEA68]">
                 <Lightbulb className="w-5 h-5" />
-                <span>Cuộc hội ngộ định mệnh 2024 – 2025</span>
+                <span>Bước ngoặt định mệnh năm 2025</span>
               </div>
               <p className="text-base text-[#AABAB7] leading-relaxed">
-                Năm 2024, qua sự kết nối của chị <strong>Nguyễn Thúy</strong>, tôi lần đầu biết đến anh <strong>Trần Phương</strong> trong một buổi Zoom học Canva.
-              </p>
-              <p className="text-base text-[#AABAB7] leading-relaxed">
-                Năm 2025, tôi gặp lại anh trong chương trình <strong className="text-white">“Xóa mù vi tính”</strong> của cộng đồng <strong>Y Dược Online CaniCoach</strong>.
+                Năm 2025, tôi tham gia chương trình <strong className="text-white">“Xóa mù vi tính”</strong> của cộng đồng <strong>Y Dược Online CaniCoach</strong>.
               </p>
               <div className="pt-2">
                 <p className="text-xs uppercase tracking-widest text-[#24B7AB] font-bold">

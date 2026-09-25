@@ -306,6 +306,18 @@ export const WhyAmHapySection: React.FC<WhyAmHapySectionProps> = ({ onOpenGift, 
                 <p className="text-xs sm:text-sm text-[#5A6F6C] leading-relaxed pl-10">
                   {shift.note}
                 </p>
+                {idx === 1 && (
+                  <div className="pl-10 pt-1">
+                    <a
+                      href="#thanh-qua"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F2F8F6] hover:bg-[#E8FBF0] text-[#128A83] text-xs font-bold border border-[#D5E4E1] transition-colors"
+                    >
+                      <Users className="w-3.5 h-3.5 text-[#24B7AB]" />
+                      <span>Xem ảnh & thành quả đội nhóm 20+ Dược sĩ</span>
+                      <ArrowRight className="w-3 h-3 text-[#128A83]" />
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>

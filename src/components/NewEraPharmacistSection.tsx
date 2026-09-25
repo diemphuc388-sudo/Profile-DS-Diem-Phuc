@@ -1,5 +1,5 @@
-import React from 'react';
-import { Phone, Users, Sparkles, CheckCircle2, MessageSquare, Gift, HeartHandshake, ShieldAlert, Store } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Users, Sparkles, CheckCircle2, MessageSquare, Gift, HeartHandshake, ShieldAlert, ZoomIn, ExternalLink, X } from 'lucide-react';
 import { CONTACT_INFO, PILLARS, IMAGES } from '../data/content';
 import { SalesProofGallery } from './SalesProofGallery';
 import { SapaTripHighlight } from './SapaTripHighlight';
@@ -10,6 +10,7 @@ interface NewEraPharmacistSectionProps {
 }
 
 export const NewEraPharmacistSection: React.FC<NewEraPharmacistSectionProps> = ({ onOpenGift, onOpenShare }) => {
+  const [isTeamModalOpen, setIsTeamModalOpen] = useState(false);
   return (
     <section id="thanh-qua" className="py-20 sm:py-28 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,86 +91,80 @@ export const NewEraPharmacistSection: React.FC<NewEraPharmacistSectionProps> = (
 
           {/* Right Image: Team & Recognition (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="rounded-2xl overflow-hidden shadow-md border border-[#D5E4E1] group">
-              <img
-                src={IMAGES.community}
-                alt="Cộng đồng Dược sĩ Diễm Phúc đồng hành và phát triển"
-                className="w-full h-auto object-cover max-h-[460px] group-hover:scale-102 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="p-3.5 bg-[#172223] text-white text-xs font-semibold text-center">
-                Lễ vinh danh & giao lưu phát triển đội ngũ Dược sĩ thời đại mới
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* COACHING & PHARMACY BRANDING HIGHLIGHT */}
-        <div className="my-12 p-6 sm:p-8 rounded-2xl bg-[#F2F8F6] border border-[#D5E4E1] shadow-xs space-y-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#24B7AB]/10 text-[#128A83] text-xs font-bold uppercase tracking-wider border border-[#24B7AB]/20">
-                <Sparkles className="w-3.5 h-3.5 text-[#24B7AB]" />
-                BAN HUẤN LUYỆN THỰC CHIẾN
-              </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[#162425]">
-                Huấn Luyện & Hướng Dẫn Các Nhà Thuốc / Quầy Thuốc Trang Trí, Định Vị Lại Thương Hiệu
-              </h3>
-              <p className="text-xs sm:text-sm text-[#5A6F6C] max-w-3xl leading-relaxed">
-                Phúc trực tiếp tham gia hỗ trợ, cầm tay chỉ việc cho các đồng nghiệp dược sĩ: từ chuẩn hóa không gian trải nghiệm khách hàng, sắp xếp quầy kệ nhận diện thương hiệu đến định vị phong cách tư vấn chuyên gia uy tín.
-              </p>
-            </div>
-            <div className="shrink-0">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white text-[#128A83] border border-[#D5E4E1] text-xs font-bold shadow-xs">
-                <Store className="w-4 h-4 text-[#24B7AB]" />
-                Chuẩn hóa điểm bán & quầy kệ
-              </span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Image 1 */}
-            <div className="group rounded-2xl overflow-hidden border border-[#D5E4E1] bg-white shadow-xs">
-              <div className="aspect-[4/3] w-full overflow-hidden relative bg-slate-900">
+            {/* Real Team Photo Card */}
+            <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-[#24B7AB]/30 group bg-white">
+              <div
+                className="relative overflow-hidden cursor-pointer bg-slate-900"
+                onClick={() => setIsTeamModalOpen(true)}
+              >
                 <img
-                  src={IMAGES.brandingCoaching1}
-                  alt="Hướng dẫn các Dược sĩ trang trí lại nhà thuốc và định vị thương hiệu"
-                  className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                  src={IMAGES.team}
+                  alt="Ảnh đội nhóm Dược sĩ Diễm Phúc"
+                  className="w-full h-auto object-cover max-h-[380px] group-hover:scale-102 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute top-3 left-3 bg-[#172223]/85 backdrop-blur-md text-[#5BEA68] text-[10px] font-bold px-2.5 py-1 rounded-md border border-white/20">
-                  Huấn luyện thực tế
+                <div className="absolute top-3 left-3 bg-[#172223]/90 backdrop-blur-md text-[#5BEA68] text-xs font-bold px-3 py-1.5 rounded-lg border border-white/20 flex items-center gap-1.5 shadow-md">
+                  <Users className="w-3.5 h-3.5 text-[#5BEA68]" />
+                  Đội nhóm thực tế Diễm Phúc
+                </div>
+                <div className="absolute bottom-3 right-3 bg-[#172223]/80 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-1.5 rounded-md border border-white/10 flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                  <ZoomIn className="w-3.5 h-3.5 text-[#5BEA68]" />
+                  <span>Phóng to ảnh</span>
                 </div>
               </div>
-              <div className="p-4 bg-white border-t border-[#D5E4E1] space-y-1">
-                <h4 className="font-bold text-sm sm:text-base text-[#162425]">
-                  Hướng dẫn các Dược sĩ trang trí lại nhà thuốc & định vị thương hiệu
-                </h4>
-                <p className="text-xs text-[#5A6F6C] leading-relaxed">
-                  Đồng hành cùng các chủ quầy thuốc thiết kế layout hiện đại, tối ưu điểm chạm thị giác tạo thiện cảm và củng cố uy tín ngay khi khách hàng bước vào.
+
+              <div className="p-4 bg-[#172223] text-white space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-sm text-[#5BEA68] flex items-center gap-1.5">
+                    <Users className="w-4 h-4 text-[#5BEA68]" />
+                    Đội ngũ Dược sĩ Diễm Phúc
+                  </span>
+                  <span className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-[#24B7AB] text-white">
+                    20+ Thành viên
+                  </span>
+                </div>
+                <p className="text-xs text-[#AABAB7] leading-relaxed">
+                  Đội ngũ hơn 20 dược sĩ tại nhiều tỉnh thành cùng đồng hành, học tập và bứt phá doanh số cùng CaniCoach – AmHapy.
                 </p>
+                <div className="pt-2 flex items-center justify-between text-xs border-t border-white/10">
+                  <button
+                    type="button"
+                    onClick={() => setIsTeamModalOpen(true)}
+                    className="text-[#5BEA68] hover:underline flex items-center gap-1 font-semibold cursor-pointer"
+                  >
+                    <ZoomIn className="w-3.5 h-3.5" />
+                    Xem ảnh đầy đủ
+                  </button>
+                  <a
+                    href="https://postimg.cc/CRYffGHR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#AABAB7] hover:text-white flex items-center gap-1"
+                  >
+                    <span>Mở link ảnh gốc</span>
+                    <ExternalLink className="w-3 h-3 text-[#24B7AB]" />
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Image 2 */}
-            <div className="group rounded-2xl overflow-hidden border border-[#D5E4E1] bg-white shadow-xs">
-              <div className="aspect-[4/3] w-full overflow-hidden relative bg-slate-900">
+            {/* Companion Community Recognition card */}
+            <div className="rounded-xl overflow-hidden shadow-xs border border-[#D5E4E1] bg-white p-3 flex items-center gap-3">
+              <div className="w-24 h-18 rounded-lg overflow-hidden shrink-0 border border-[#D5E4E1] bg-slate-900">
                 <img
-                  src={IMAGES.brandingCoaching2}
-                  alt="Hướng dẫn trang trí nhà thuốc định vị thương hiệu"
-                  className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                  src={IMAGES.community}
+                  alt="Lễ vinh danh & giao lưu phát triển đội ngũ Dược sĩ thời đại mới"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute top-3 left-3 bg-[#172223]/85 backdrop-blur-md text-[#5BEA68] text-[10px] font-bold px-2.5 py-1 rounded-md border border-white/20">
-                  Định vị thương hiệu
-                </div>
               </div>
-              <div className="p-4 bg-white border-t border-[#D5E4E1] space-y-1">
-                <h4 className="font-bold text-sm sm:text-base text-[#162425]">
-                  Chuẩn hóa không gian quầy thuốc & xây dựng niềm tin dài lâu
-                </h4>
-                <p className="text-xs text-[#5A6F6C] leading-relaxed">
-                  Hướng dẫn phân khu sản phẩm khoa học, tích hợp khu vực tư vấn đo lường sức khỏe giúp gia tăng giá trị đơn hàng và gắn kết khách hàng bền vững.
+              <div className="text-xs text-[#5A6F6C] space-y-1">
+                <div className="font-bold text-[#162425] flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-[#24B7AB]" />
+                  Giao lưu & Vinh danh toàn quốc
+                </div>
+                <p className="text-[11px] text-[#5A6F6C] line-clamp-2">
+                  Ghi nhận những bước chuyển đổi bứt phá của các dược sĩ trong hệ thống Y Dược Online.
                 </p>
               </div>
             </div>
@@ -347,6 +342,74 @@ export const NewEraPharmacistSection: React.FC<NewEraPharmacistSectionProps> = (
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal for Team Photo */}
+      {isTeamModalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setIsTeamModalOpen(false)}
+        >
+          <div
+            className="relative max-w-4xl w-full bg-[#172223] rounded-2xl overflow-hidden border border-[#334546] shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-4 bg-[#121c1d] border-b border-white/10 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Users className="w-5 h-5 text-[#5BEA68]" />
+                <h3 className="font-bold text-white text-sm sm:text-base">
+                  Đội Ngũ Dược Sĩ Diễm Phúc – Hơn 20+ Dược Sĩ Đồng Hành
+                </h3>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://postimg.cc/CRYffGHR"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-[#5BEA68] text-xs font-semibold flex items-center gap-1 transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span className="hidden sm:inline">Mở link gốc</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setIsTeamModalOpen(false)}
+                  className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Image */}
+            <div className="p-2 sm:p-4 bg-black flex items-center justify-center max-h-[75vh] overflow-auto">
+              <img
+                src={IMAGES.team}
+                alt="Ảnh đội nhóm Dược sĩ Diễm Phúc"
+                className="max-h-[70vh] w-auto object-contain rounded-lg"
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 bg-[#172223] text-xs text-[#AABAB7] flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/10">
+              <div className="flex items-center gap-2">
+                <span className="px-2.5 py-1 rounded bg-[#24B7AB]/20 text-[#5BEA68] font-bold">
+                  20+ Dược Sĩ Tiên Phong
+                </span>
+                <span>Cùng học tập, làm chủ công nghệ và phát triển hệ thống</span>
+              </div>
+              <a
+                href={CONTACT_INFO.zaloGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-[#24B7AB] hover:bg-[#128A83] text-white font-bold transition-colors shrink-0"
+              >
+                Gia nhập đội ngũ cùng DS. Diễm Phúc
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

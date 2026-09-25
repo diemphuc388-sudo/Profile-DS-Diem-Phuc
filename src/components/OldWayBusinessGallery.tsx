@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Package, Truck, Box, ZoomIn, X, ChevronLeft, ChevronRight, AlertCircle, Clock, ShieldAlert } from 'lucide-react';
-import { OLD_BUSINESS_DATA } from '../data/content';
+import { Package, Truck, Box, ZoomIn, X, ChevronLeft, ChevronRight, AlertCircle, Clock, ShieldAlert, ExternalLink } from 'lucide-react';
+import { OLD_BUSINESS_DATA, IMAGES } from '../data/content';
 import { OldBusinessPhotoItem } from '../types';
 
 export const OldWayBusinessGallery: React.FC = () => {
@@ -92,23 +92,77 @@ export const OldWayBusinessGallery: React.FC = () => {
   const countDong = OLD_BUSINESS_DATA.filter((item) => item.category === 'dong-hang').length;
   const countShip = OLD_BUSINESS_DATA.filter((item) => item.category === 'ship-hang').length;
 
+  const bannerPhotoItem: OldBusinessPhotoItem = {
+    id: 'banner-old-biz',
+    imageUrl: IMAGES.oldWayBanner || 'https://i.postimg.cc/BbxK0zJT/Anh-Chat-GPT-09-48-48-25-thg-9-2026.png',
+    title: 'Ôm 1 kho hàng, loay hoay đóng hàng & ship hàng cả ngày',
+    category: 'kho-hang',
+    tag: 'Giai đoạn trước 2025',
+    description: 'Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025: người dược sĩ kiêm nhiệm từ kiểm đếm kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe...',
+    badge: 'Ảnh tư liệu thực tế'
+  };
+
   return (
     <div id="hinh-anh-kieu-cu" className="my-14 pt-6 border-t border-red-200/70 scroll-mt-24">
       {/* Header Banner */}
       <div className="bg-gradient-to-br from-[#1E292B] via-[#172223] to-[#121A1B] text-white rounded-2xl p-6 sm:p-8 border border-red-500/20 relative overflow-hidden mb-8 shadow-md">
         <div className="absolute top-0 right-0 w-80 h-80 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="max-w-3xl space-y-3 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/20 text-red-300 text-xs font-bold uppercase tracking-wider border border-red-500/30">
-            <AlertCircle className="w-4 h-4 text-red-400" />
-            HÌNH ẢNH THỰC TẾ TRƯỚC NĂM 2025 • KINH DOANH THEO KIỂU CŨ
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center relative z-10">
+          {/* Left Text Column */}
+          <div className="lg:col-span-7 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-500/20 text-red-300 text-xs font-bold uppercase tracking-wider border border-red-500/30">
+              <AlertCircle className="w-4 h-4 text-red-400" />
+              HÌNH ẢNH THỰC TẾ TRƯỚC NĂM 2025 • KINH DOANH THEO KIỂU CŨ
+            </div>
+            <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight">
+              ÔM 1 KHO HÀNG, LOAY HOAY ĐÓNG HÀNG & SHIP HÀNG CẢ NGÀY
+            </h3>
+            <p className="text-xs sm:text-sm text-[#AABAB7] leading-relaxed">
+              Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025. Người dược sĩ kiêm nhiệm đủ mọi vai: từ kiểm đếm tồn kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe... Biên lợi nhuận mỏng, áp lực vốn đọng và nguy cơ hàng cận date luôn là nỗi lo âu thường trực.
+            </p>
           </div>
-          <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight">
-            ÔM 1 KHO HÀNG, LOAY HOAY ĐÓNG HÀNG & SHIP HÀNG CẢ NGÀY
-          </h3>
-          <p className="text-xs sm:text-sm text-[#AABAB7] leading-relaxed">
-            Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025. Người dược sĩ kiêm nhiệm đủ mọi vai: từ kiểm đếm tồn kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe... Biên lợi nhuận mỏng, áp lực vốn đọng và nguy cơ hàng cận date luôn là nỗi lo âu thường trực.
-          </p>
+
+          {/* Right Image Column (User Marked Position) */}
+          <div className="lg:col-span-5">
+            <div className="rounded-xl overflow-hidden border-2 border-red-500/30 bg-black/60 shadow-xl group">
+              <div
+                onClick={() => setSelectedPhoto(bannerPhotoItem)}
+                className="relative overflow-hidden cursor-pointer block"
+                title="Bấm để xem ảnh phóng to"
+              >
+                <img
+                  src={IMAGES.oldWayBanner || 'https://i.postimg.cc/BbxK0zJT/Anh-Chat-GPT-09-48-48-25-thg-9-2026.png'}
+                  alt="Anh-Chat-GPT-09-48-48-25-thg-9-2026"
+                  className="w-full h-48 sm:h-56 lg:h-52 object-cover group-hover:scale-103 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 left-2.5 bg-[#172223]/90 backdrop-blur-md text-red-300 text-[11px] font-bold px-2.5 py-1 rounded-md border border-red-500/30 flex items-center gap-1.5 shadow-md">
+                  <AlertCircle className="w-3.5 h-3.5 text-red-400" />
+                  Ảnh tư liệu trước 2025
+                </div>
+                <div className="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-1 rounded-md border border-white/20 flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity shadow-md">
+                  <ZoomIn className="w-3.5 h-3.5 text-red-400" />
+                  <span>Phóng to</span>
+                </div>
+              </div>
+
+              <div className="px-3.5 py-2.5 bg-[#121A1B] border-t border-white/10 flex items-center justify-between text-xs text-[#AABAB7]">
+                <span className="font-semibold text-white/90 truncate mr-2">
+                  Ôm kho, đóng hàng & ship xe
+                </span>
+                <a
+                  href="https://postimg.cc/kRg4Nf6G"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red-300 hover:text-white flex items-center gap-1 font-bold shrink-0 transition-colors"
+                >
+                  <span>Mở link gốc</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 3 Real Problem Summary Tags */}

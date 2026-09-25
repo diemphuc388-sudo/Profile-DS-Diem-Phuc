@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, ZoomIn, X, ChevronLeft, ChevronRight, MapPin, Activity, CheckCircle2, Award, Stethoscope, GraduationCap } from 'lucide-react';
-import { HEALTH_TECH_COURSES_DATA } from '../data/content';
+import { Sparkles, ZoomIn, X, ChevronLeft, ChevronRight, MapPin, Activity, CheckCircle2, Award, Stethoscope, GraduationCap, Store } from 'lucide-react';
+import { HEALTH_TECH_COURSES_DATA, IMAGES } from '../data/content';
 import { HealthTechCourseItem } from '../types';
 
 export const HealthTechCoursesGallery: React.FC = () => {
@@ -56,6 +56,122 @@ export const HealthTechCoursesGallery: React.FC = () => {
         <p className="text-xs sm:text-sm text-[#AABAB7] max-w-2xl mx-auto leading-relaxed">
           Dược sĩ Diễm Phúc luôn chủ động học hỏi và đồng hành cùng các đồng nghiệp: từ <strong>Khóa học K02: Xóa mù AI cùng các Dược sĩ</strong>, lớp chuyên sâu <strong>Y học cổ truyền cùng đội ngũ Y Dược AmHapy</strong>, đến các khóa thực hành đo 45 chỉ số và máy soi vi tuần hoàn mao mạch tại <strong>Sài Gòn</strong> và <strong>Khóa K04 trực tuyến qua Zoom</strong>.
         </p>
+      </div>
+
+      {/* BAN HUẤN LUYỆN THỰC CHIẾN - HUẤN LUYỆN & HƯỚNG DẪN CÁC NHÀ THUỐC TRANG TRÍ, ĐỊNH VỊ THƯƠNG HIỆU */}
+      <div className="mb-14 p-6 sm:p-8 rounded-2xl bg-[#203032] border border-[#334546] shadow-xl space-y-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#24B7AB]/20 text-[#5BEA68] text-xs font-bold uppercase tracking-wider border border-[#24B7AB]/40">
+              <Sparkles className="w-3.5 h-3.5 text-[#5BEA68]" />
+              BAN HUẤN LUYỆN THỰC CHIẾN
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+              Huấn Luyện & Hướng Dẫn Các Nhà Thuốc / Quầy Thuốc Trang Trí, Định Vị Lại Thương Hiệu
+            </h3>
+            <p className="text-xs sm:text-sm text-[#AABAB7] max-w-3xl leading-relaxed">
+              Phúc trực tiếp tham gia hỗ trợ, cầm tay chỉ việc cho các đồng nghiệp dược sĩ: từ chuẩn hóa không gian trải nghiệm khách hàng, sắp xếp quầy kệ nhận diện thương hiệu đến định vị phong cách tư vấn chuyên gia uy tín.
+            </p>
+          </div>
+          <div className="shrink-0">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/10 text-[#5BEA68] border border-[#334546] text-xs font-bold shadow-xs">
+              <Store className="w-4 h-4 text-[#5BEA68]" />
+              Chuẩn hóa điểm bán & quầy kệ
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Image 1 */}
+          <div
+            onClick={() => setSelectedCourse({
+              id: 'coaching-decor-1',
+              title: 'Hướng dẫn các Dược sĩ trang trí lại nhà thuốc & định vị thương hiệu',
+              courseName: 'Huấn luyện thực chiến định vị quầy thuốc',
+              location: 'Zoom Trực Tuyến & Thực Tế',
+              year: '2025 – 2026',
+              imageUrl: IMAGES.brandingCoaching1,
+              device: 'Chuẩn hóa quầy kệ & Layout',
+              description: 'Đồng hành cùng các chủ quầy thuốc thiết kế layout hiện đại, tối ưu điểm chạm thị giác tạo thiện cảm và củng cố uy tín ngay khi khách hàng bước vào.',
+              badge: 'Huấn luyện thực tế',
+              skills: [
+                'Thiết kế layout quầy kệ chuẩn thương hiệu',
+                'Tối ưu điểm chạm thị giác khách hàng',
+                'Tạo không gian trải nghiệm tư vấn chuyên nghiệp'
+              ]
+            })}
+            className="group rounded-2xl overflow-hidden border border-[#334546] bg-[#172223] shadow-md hover:border-[#5BEA68] transition-all cursor-pointer"
+          >
+            <div className="aspect-[4/3] w-full overflow-hidden relative bg-black/40">
+              <img
+                src={IMAGES.brandingCoaching1}
+                alt="Hướng dẫn các Dược sĩ trang trí lại nhà thuốc và định vị thương hiệu"
+                className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute top-3 left-3 bg-[#172223]/90 backdrop-blur-md text-[#5BEA68] text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/20">
+                Huấn luyện thực tế
+              </div>
+              <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-1 rounded-md border border-white/20 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5 text-[#5BEA68]" />
+                <span>Phóng to</span>
+              </div>
+            </div>
+            <div className="p-4 bg-[#172223] border-t border-[#334546] space-y-1">
+              <h4 className="font-bold text-sm sm:text-base text-white group-hover:text-[#5BEA68] transition-colors">
+                Hướng dẫn các Dược sĩ trang trí lại nhà thuốc & định vị thương hiệu
+              </h4>
+              <p className="text-xs text-[#AABAB7] leading-relaxed">
+                Đồng hành cùng các chủ quầy thuốc thiết kế layout hiện đại, tối ưu điểm chạm thị giác tạo thiện cảm và củng cố uy tín ngay khi khách hàng bước vào.
+              </p>
+            </div>
+          </div>
+
+          {/* Image 2 */}
+          <div
+            onClick={() => setSelectedCourse({
+              id: 'coaching-decor-2',
+              title: 'Chuẩn hóa không gian quầy thuốc & xây dựng niềm tin dài lâu',
+              courseName: 'Định vị thương hiệu quầy thuốc thực chiến',
+              location: 'Zoom Trực Tuyến & Thực Tế',
+              year: '2025 – 2026',
+              imageUrl: IMAGES.brandingCoaching2,
+              device: 'Phân khu sản phẩm & Khu vực đo lường',
+              description: 'Hướng dẫn phân khu sản phẩm khoa học, tích hợp khu vực tư vấn đo lường sức khỏe giúp gia tăng giá trị đơn hàng và gắn kết khách hàng bền vững.',
+              badge: 'Định vị thương hiệu',
+              skills: [
+                'Phân khu sản phẩm khoa học & bắt mắt',
+                'Tích hợp góc tầm soát & đo lường sức khỏe',
+                'Gia tăng giá trị đơn hàng và niềm tin bệnh nhân'
+              ]
+            })}
+            className="group rounded-2xl overflow-hidden border border-[#334546] bg-[#172223] shadow-md hover:border-[#5BEA68] transition-all cursor-pointer"
+          >
+            <div className="aspect-[4/3] w-full overflow-hidden relative bg-black/40">
+              <img
+                src={IMAGES.brandingCoaching2}
+                alt="Hướng dẫn trang trí nhà thuốc định vị thương hiệu"
+                className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute top-3 left-3 bg-[#172223]/90 backdrop-blur-md text-[#5BEA68] text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/20">
+                Định vị thương hiệu
+              </div>
+              <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md text-white text-[11px] font-medium px-2.5 py-1 rounded-md border border-white/20 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ZoomIn className="w-3.5 h-3.5 text-[#5BEA68]" />
+                <span>Phóng to</span>
+              </div>
+            </div>
+            <div className="p-4 bg-[#172223] border-t border-[#334546] space-y-1">
+              <h4 className="font-bold text-sm sm:text-base text-white group-hover:text-[#5BEA68] transition-colors">
+                Chuẩn hóa không gian quầy thuốc & xây dựng niềm tin dài lâu
+              </h4>
+              <p className="text-xs text-[#AABAB7] leading-relaxed">
+                Hướng dẫn phân khu sản phẩm khoa học, tích hợp khu vực tư vấn đo lường sức khỏe giúp gia tăng giá trị đơn hàng và gắn kết khách hàng bền vững.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Filter Tabs */}
