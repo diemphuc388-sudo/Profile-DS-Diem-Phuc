@@ -12,7 +12,7 @@ export const CONTACT_INFO = {
   pharmacyLogo: 'https://i.postimg.cc/sxJd8Lb6/Logo-Nha-thuoc-Minh-Khoi-(9).png',
   pharmacyLogoUrl: 'https://postimg.cc/sxJd8Lb6',
   communities: 'Cộng đồng Y Dược Online CaniCoach – AmHapy',
-  shareMessage: 'Khám phá câu chuyện chuyển đổi số ấn tượng của Dược sĩ Diễm Phúc: Từ dược sĩ truyền thống đến làm chủ công nghệ & xây dựng cộng đồng nhà thuốc hiện đại. Tham gia nhóm trao đổi & nhận quà tặng miễn phí: https://zalo.me/g/ve9foxk4sdmb5qmuy9cq'
+  shareMessage: 'Tôi đồng hành cùng các dược sĩ nhà thuốc truyền thống ứng dụng công cụ công nghệ đưa nhà thuốc lên online tự động hoá và hiện đại.\n\n👉 Tham gia nhóm giao lưu & nhận tài liệu miễn phí: https://zalo.me/g/ve9foxk4sdmb5qmuy9cq'
 };
 
 export const IMAGES = {

@@ -85,26 +85,23 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Social Card Thumbnail Preview */}
-        <div className="mb-5 rounded-xl border border-[#D5E4E1] overflow-hidden bg-white shadow-xs">
-          <div className="relative aspect-[1200/630] w-full bg-slate-900 overflow-hidden group">
+        <div className="mb-4 rounded-2xl border border-[#D5E4E1] overflow-hidden bg-white shadow-xs">
+          <div className="relative w-full h-48 sm:h-56 bg-gradient-to-br from-[#0C1516] via-[#172223] to-[#0C1516] flex items-center justify-center p-2">
             <img
               src="https://i.postimg.cc/Jh34TsCx/Chat-GPT-Image-08-42-24-17-thg-9-2026-(1).png"
               alt="Thumbnail Dược Sĩ Diễm Phúc"
-              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-md"
             />
-            <div className="absolute top-2.5 right-2.5 bg-[#172223]/85 backdrop-blur-md text-[#5BEA68] px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide flex items-center gap-1 border border-white/20">
-              <span>ẢNH THUMBNAIL (1200 × 630)</span>
-            </div>
           </div>
-          <div className="p-3.5 bg-[#F2F8F6] border-t border-[#D5E4E1]">
-            <div className="text-[11px] font-bold text-[#128A83] uppercase tracking-wider mb-0.5">
+          <div className="p-3.5 sm:p-4 bg-[#F2F8F6] border-t border-[#D5E4E1]">
+            <div className="text-[11px] font-bold text-[#128A83] uppercase tracking-wider mb-1">
               DUOCSIDIEMPHUC.VN • NHÀ THUỐC MINH KHÔI
             </div>
-            <h4 className="font-bold text-sm sm:text-base text-[#162425] line-clamp-1 leading-snug">
+            <h4 className="font-bold text-sm sm:text-base text-[#162425] leading-snug">
               Dược Sĩ Diễm Phúc – Đồng Hành Xây Dựng Nhà Thuốc Hiện Đại
             </h4>
-            <p className="text-xs text-[#5A6F6C] line-clamp-2 mt-1 leading-relaxed">
-              Hành trình từ dược sĩ truyền thống đến làm chủ công nghệ AI, tự động hóa và kiến tạo cộng đồng dược sĩ thời đại mới.
+            <p className="text-xs text-[#5A6F6C] mt-1.5 leading-relaxed">
+              Tôi đồng hành cùng các dược sĩ nhà thuốc truyền thống ứng dụng công cụ công nghệ đưa nhà thuốc lên online tự động hoá và hiện đại
             </p>
           </div>
         </div>
