@@ -12,6 +12,7 @@ import { ZaloGiftModal } from './components/ZaloGiftModal';
 import { ShareModal } from './components/ShareModal';
 import { FloatingActions } from './components/FloatingActions';
 import { MobileStickyBar } from './components/MobileStickyBar';
+import { FallingBlossoms } from './components/FallingBlossoms';
 
 export default function App() {
   const [isGiftModalOpen, setIsGiftModalOpen] = useState(false);
@@ -46,6 +47,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative bg-white text-[#162425]">
+      {/* Gentle Falling Blossoms Effect */}
+      <FallingBlossoms />
+
       {/* Sticky Navigation */}
       <Navbar
         onOpenShare={() => setIsShareModalOpen(true)}
@@ -70,7 +74,7 @@ export default function App() {
         {/* Section 4: Từ khủng hoảng đến chuyển đổi */}
         <TransformationSection />
 
-        {/* Section 4B: Vì sao tôi lựa chọn mô hình Affiliate AmHapy? */}
+        {/* Section 4B: Một lựa chọn giúp tôi làm nghề nhẹ hơn và đi xa hơn */}
         <WhyAmHapySection
           onOpenGift={() => setIsGiftModalOpen(true)}
           onOpenShare={() => setIsShareModalOpen(true)}

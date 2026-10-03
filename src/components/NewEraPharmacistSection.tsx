@@ -20,8 +20,8 @@ export const NewEraPharmacistSection: React.FC<NewEraPharmacistSectionProps> = (
             <Sparkles className="w-4 h-4 text-[#24B7AB]" />
             SECTION 05 • PHIÊN BẢN DƯỢC SĨ TÔI ĐANG XÂY DỰNG
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#162425] leading-tight">
-            THÀNH QUẢ LỚN NHẤT <span className="text-[#24B7AB]">KHÔNG CHỈ LÀ DOANH SỐ</span>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#162425] leading-tight">
+            THÀNH QUẢ LỚN NHẤT <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#128A83] to-[#24B7AB] font-black underline decoration-[#5BEA68] decoration-4 underline-offset-8">KHÔNG CHỈ LÀ DOANH SỐ</span>
           </h2>
           <p className="text-base sm:text-lg text-[#5A6F6C]">
             Từ bán lẻ đơn thuần đến sứ mệnh đồng hành chăm sóc sức khỏe dài hạn và phát triển cộng đồng dược sĩ thế hệ mới.
@@ -35,24 +35,30 @@ export const NewEraPharmacistSection: React.FC<NewEraPharmacistSectionProps> = (
             <div className="bg-[#F2F8F6] p-6 sm:p-8 rounded-2xl border border-[#D5E4E1] space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-white border border-gray-200 shadow-xs">
-                  <div className="text-xs font-bold text-[#5A6F6C] uppercase">Tư duy ngày trước</div>
-                  <div className="font-semibold text-sm text-[#162425] mt-1">
+                  <div className="text-xs font-bold text-red-500 uppercase flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-400" />
+                    TƯ DUY NGÀY TRƯỚC
+                  </div>
+                  <div className="font-extrabold text-sm sm:text-base text-[#162425] mt-1.5 line-through decoration-red-400">
                     “Khách cần mua sản phẩm gì?”
                   </div>
-                  <p className="text-xs text-[#5A6F6C] mt-1">Tập trung bán từng sản phẩm & từng đơn hàng nhỏ lẻ</p>
+                  <p className="text-xs text-[#5A6F6C] mt-1 font-medium">Bị động bán từng sản phẩm lẻ, lệ thuộc khách vãng lai</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border-2 border-[#24B7AB] shadow-xs">
-                  <div className="text-xs font-bold text-[#128A83] uppercase">Tư duy hôm nay</div>
-                  <div className="font-bold text-sm text-[#162425] mt-1">
-                    “Khách hàng thực sự cần hỗ trợ điều gì?”
+                <div className="p-4 rounded-xl bg-gradient-to-br from-[#E8FBF0]/70 to-white border-2 border-[#24B7AB] shadow-sm">
+                  <div className="text-xs font-black text-[#128A83] uppercase flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#5BEA68] animate-pulse" />
+                    TƯ DUY ĐỘT PHÁ HÔM NAY
                   </div>
-                  <p className="text-xs text-[#128A83] font-semibold mt-1">Đồng hành, chăm sóc sức khỏe chủ động lâu dài</p>
+                  <div className="font-extrabold text-sm sm:text-base text-[#128A83] mt-1.5">
+                    “Khách hàng thực sự cần giải pháp gì để khỏe tận gốc?”
+                  </div>
+                  <p className="text-xs text-[#128A83] font-bold mt-1">Đồng hành trọn vẹn, tư vấn combo liệu trình cá nhân hóa</p>
                 </div>
               </div>
 
               <p className="text-sm sm:text-base text-[#162425] leading-relaxed">
-                Tôi bắt đầu tiếp cận khách hàng theo hướng <strong>chăm sóc dài hạn</strong>, kết hợp kiến thức chuyên môn, dinh dưỡng, thiết bị tầm soát hiện đại và công nghệ hỗ trợ quản lý khách hàng chu đáo.
+                Tôi bắt đầu tiếp cận khách hàng theo hướng <strong className="text-[#128A83] font-black underline decoration-[#5BEA68]">chăm sóc sức khỏe dài hạn</strong>, kết hợp kiến thức chuyên môn dược lâm sàng, dinh dưỡng phòng bệnh, góc tầm soát sinh học hiện đại và công nghệ tự động quản lý khách hàng chu đáo.
               </p>
 
               {/* Responsible Healthcare Notice */}
@@ -65,14 +71,14 @@ export const NewEraPharmacistSection: React.FC<NewEraPharmacistSectionProps> = (
             </div>
 
             {/* Leadership & 20+ Pharmacists milestones */}
-            <div className="p-6 rounded-2xl bg-white border border-[#D5E4E1] shadow-xs space-y-4">
-              <div className="flex items-center gap-3 text-[#128A83] font-bold text-sm sm:text-base">
-                <Users className="w-5 h-5 text-[#5BEA68]" />
-                <span>ĐỘI NGŨ 20+ DƯỢC SĨ TẠI NHIỀU TỈNH THÀNH</span>
+            <div className="p-6 sm:p-7 rounded-2xl bg-white border border-[#D5E4E1] shadow-xs space-y-4">
+              <div className="flex items-center gap-3 text-[#128A83] font-black text-base sm:text-lg">
+                <Users className="w-6 h-6 text-[#5BEA68]" />
+                <span>ĐỘI NGŨ 20+ DƯỢC SĨ ĐỐI TÁC TRÊN TOÀN QUỐC</span>
               </div>
 
-              <p className="text-sm text-[#5A6F6C] leading-relaxed">
-                Từ một người từng e ngại công nghệ, tôi đã tự tin tham gia <strong>Ban huấn luyện</strong> để hỗ trợ những dược sĩ khác tiếp cận công nghệ. Từ một người từng loay hoay một mình, nay tôi đã có đội ngũ hơn <strong>20 dược sĩ</strong> cùng học tập, kinh doanh và phát triển.
+              <p className="text-sm sm:text-base text-[#5A6F6C] leading-relaxed">
+                Từ một người từng e ngại máy tính, tôi đã tự tin bước lên <strong className="text-[#128A83] font-black bg-[#E8FBF0] px-2 py-0.5 rounded border border-[#24B7AB]/30">Ban huấn luyện thực chiến</strong> để chuyển giao công nghệ cho hàng trăm dược sĩ. Từ một người từng loay hoay đơn độc, nay tôi đã xây dựng mạng lưới <strong className="text-[#162425] font-black bg-[#24B7AB]/20 px-2 py-0.5 rounded border border-[#24B7AB]/40">hơn 20 Dược sĩ đối tác</strong> cùng tự do tài chính và vận hành tự động.
               </p>
 
               <div className="flex flex-wrap gap-2 pt-1">

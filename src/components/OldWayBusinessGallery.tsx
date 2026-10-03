@@ -7,7 +7,10 @@ export const OldWayBusinessGallery: React.FC = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<OldBusinessPhotoItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<'all' | 'kho-hang' | 'dong-hang' | 'ship-hang'>('all');
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const currentIndexRef = useRef<number>(currentIndex);
+  currentIndexRef.current = currentIndex;
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -48,6 +51,18 @@ export const OldWayBusinessGallery: React.FC = () => {
     }
     setCurrentIndex(index);
   };
+
+  // Auto-scroll images every 2 seconds without needing to click next
+  useEffect(() => {
+    if (selectedPhoto || isPaused || filteredData.length <= 1) return;
+
+    const timer = setInterval(() => {
+      const nextIndex = (currentIndexRef.current + 1) % filteredData.length;
+      scrollToIndex(nextIndex);
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [selectedPhoto, isPaused, filteredData.length]);
 
   const handleNext = () => {
     if (filteredData.length === 0) return;
@@ -94,11 +109,11 @@ export const OldWayBusinessGallery: React.FC = () => {
 
   const bannerPhotoItem: OldBusinessPhotoItem = {
     id: 'banner-old-biz',
-    imageUrl: IMAGES.oldWayBanner || 'https://i.postimg.cc/BbxK0zJT/Anh-Chat-GPT-09-48-48-25-thg-9-2026.png',
-    title: 'Ôm 1 kho hàng, loay hoay đóng hàng & ship hàng cả ngày',
+    imageUrl: IMAGES.oldWayBanner || 'https://i.postimg.cc/5tSXc6pf/tu-om-hang-den-van-hanh-he-thong.png',
+    title: 'Từ ôm hàng đến vận hành hệ thống – Giai đoạn trước 2025',
     category: 'kho-hang',
     tag: 'Giai đoạn trước 2025',
-    description: 'Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025: người dược sĩ kiêm nhiệm từ kiểm đếm kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe...',
+    description: 'Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025: người dược sĩ kiêm nhiệm từ kiểm đếm kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe... Biên lợi nhuận mỏng, áp lực vốn đọng và nguy cơ hàng cận date luôn là nỗi lo âu thường trực.',
     badge: 'Ảnh tư liệu thực tế'
   };
 
@@ -116,10 +131,13 @@ export const OldWayBusinessGallery: React.FC = () => {
               HÌNH ẢNH THỰC TẾ TRƯỚC NĂM 2025 • KINH DOANH THEO KIỂU CŨ
             </div>
             <h3 className="text-xl sm:text-3xl font-extrabold text-white leading-tight">
-              ÔM 1 KHO HÀNG, LOAY HOAY ĐÓNG HÀNG & SHIP HÀNG CẢ NGÀY
+              ÔM 1 KHO HÀNG <span className="text-red-400 underline decoration-red-500/60 underline-offset-4">TIỀN TỶ</span>, LOAY HOAY ĐÓNG HÀNG & SHIP HÀNG CẢ NGÀY
             </h3>
             <p className="text-xs sm:text-sm text-[#AABAB7] leading-relaxed">
-              Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025. Người dược sĩ kiêm nhiệm đủ mọi vai: từ kiểm đếm tồn kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe... Biên lợi nhuận mỏng, áp lực vốn đọng và nguy cơ hàng cận date luôn là nỗi lo âu thường trực.
+              Những góc máy chân thật ghi lại giai đoạn kinh doanh truyền thống đầy nhọc nhằn trước năm 2025. Người dược sĩ kiêm nhiệm đủ mọi vai: từ kiểm đếm tồn kho, cắt dán thùng carton, đóng hàng đến vội vã bốc xếp hàng giao xe khách, chành xe...{' '}
+              <span className="text-red-300 font-extrabold bg-red-950/70 px-2 py-0.5 rounded border border-red-500/40">Biên lợi nhuận mỏng</span>,{' '}
+              <span className="text-amber-300 font-extrabold bg-amber-950/70 px-2 py-0.5 rounded border border-amber-500/40">áp lực vốn đọng</span> và{' '}
+              <span className="text-rose-300 font-extrabold bg-rose-950/70 px-2 py-0.5 rounded border border-rose-500/40">nguy cơ hàng cận date</span> luôn là nỗi lo âu thường trực.
             </p>
           </div>
 
@@ -132,8 +150,8 @@ export const OldWayBusinessGallery: React.FC = () => {
                 title="Bấm để xem ảnh phóng to"
               >
                 <img
-                  src={IMAGES.oldWayBanner || 'https://i.postimg.cc/BbxK0zJT/Anh-Chat-GPT-09-48-48-25-thg-9-2026.png'}
-                  alt="Anh-Chat-GPT-09-48-48-25-thg-9-2026"
+                  src={IMAGES.oldWayBanner || 'https://i.postimg.cc/5tSXc6pf/tu-om-hang-den-van-hanh-he-thong.png'}
+                  alt="tu-om-hang-den-van-hanh-he-thong"
                   className="w-full h-48 sm:h-56 lg:h-52 object-cover group-hover:scale-103 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -149,10 +167,10 @@ export const OldWayBusinessGallery: React.FC = () => {
 
               <div className="px-3.5 py-2.5 bg-[#121A1B] border-t border-white/10 flex items-center justify-between text-xs text-[#AABAB7]">
                 <span className="font-semibold text-white/90 truncate mr-2">
-                  Ôm kho, đóng hàng & ship xe
+                  Từ ôm hàng đến vận hành hệ thống
                 </span>
                 <a
-                  href="https://postimg.cc/kRg4Nf6G"
+                  href={IMAGES.oldWayBannerUrl || 'https://postimg.cc/PLNXYfB7'}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-red-300 hover:text-white flex items-center gap-1 font-bold shrink-0 transition-colors"
@@ -167,25 +185,25 @@ export const OldWayBusinessGallery: React.FC = () => {
 
         {/* 3 Real Problem Summary Tags */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-6 border-t border-white/10 relative z-10">
-          <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-start gap-2.5">
+          <div className="p-3.5 rounded-xl bg-red-950/40 backdrop-blur-sm border border-red-500/30 flex items-start gap-3">
             <Box className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-xs font-bold text-white">Ôm 1 kho hàng lớn</div>
-              <div className="text-[11px] text-[#AABAB7]">Hàng chất cao chạm trần, áp lực chôn vốn và hạn sử dụng.</div>
+              <div className="text-xs font-black text-red-300 uppercase tracking-wide">Ôm 1 kho hàng lớn</div>
+              <div className="text-xs text-[#AABAB7]">Hàng chất cao chạm trần, <strong className="text-white font-bold">áp lực chôn vốn tiền tỷ</strong> và nỗi lo date cận kề.</div>
             </div>
           </div>
-          <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-start gap-2.5">
+          <div className="p-3.5 rounded-xl bg-amber-950/40 backdrop-blur-sm border border-amber-500/30 flex items-start gap-3">
             <Package className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-xs font-bold text-white">Loay hoay đóng hàng</div>
-              <div className="text-[11px] text-[#AABAB7]">Cả ngày cặm cụi băng keo, thùng hộp, chiếm hết thời gian chuyên môn.</div>
+              <div className="text-xs font-black text-amber-300 uppercase tracking-wide">Loay hoay đóng hàng</div>
+              <div className="text-xs text-[#AABAB7]">Cả ngày cặm cụi băng keo, <strong className="text-white font-bold">chiếm hết 80% thời gian</strong> tư vấn chuyên môn.</div>
             </div>
           </div>
-          <div className="p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-start gap-2.5">
+          <div className="p-3.5 rounded-xl bg-rose-950/40 backdrop-blur-sm border border-rose-500/30 flex items-start gap-3">
             <Truck className="w-5 h-5 text-rose-400 shrink-0 mt-0.5" />
             <div>
-              <div className="text-xs font-bold text-white">Ship hàng cả ngày</div>
-              <div className="text-[11px] text-[#AABAB7]">Hối hả giao hàng ra chành xe, bến bãi, vừa mệt thể lực vừa rủi ro công nợ.</div>
+              <div className="text-xs font-black text-rose-300 uppercase tracking-wide">Ship hàng cả ngày</div>
+              <div className="text-xs text-[#AABAB7]">Hối hả giao chành xe, <strong className="text-white font-bold">vừa kiệt sức thể lực</strong> vừa nơm nớp rủi ro công nợ.</div>
             </div>
           </div>
         </div>
@@ -236,8 +254,12 @@ export const OldWayBusinessGallery: React.FC = () => {
           </button>
         </div>
 
-        {/* Counter and Mini Next/Prev Buttons */}
-        <div className="flex items-center gap-2.5">
+        {/* Counter, Auto-run Indicator and Mini Next/Prev Buttons */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs font-semibold">
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+            <span>Tự chạy 2s</span>
+          </div>
           <div className="text-xs text-[#5A6F6C] font-semibold bg-white px-3 py-1.5 rounded-lg border border-[#D5E4E1]">
             Ảnh <span className="font-bold text-red-600">{currentIndex + 1}</span> / {filteredData.length}
           </div>
@@ -264,7 +286,13 @@ export const OldWayBusinessGallery: React.FC = () => {
       </div>
 
       {/* ================= CAROUSEL VIEWPORT ================= */}
-      <div className="relative group/carousel">
+      <div 
+        className="relative group/carousel"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
         {/* Floating Left Button (Desktop) */}
         <button
           onClick={handlePrev}

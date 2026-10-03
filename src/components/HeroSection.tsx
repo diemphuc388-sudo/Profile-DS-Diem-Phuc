@@ -21,30 +21,60 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGift }) => {
           {/* Left Column: Story Copy & CTAs (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F2F8F6] border border-[#D5E4E1] text-[#128A83] text-xs sm:text-sm font-bold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4 text-[#24B7AB]" />
-              <span>TÔI LÀ DƯỢC SĨ DIỄM PHÚC</span>
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F2F8F6] border border-[#D5E4E1] text-[#128A83] text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-[#24B7AB]" />
+                <span>TÔI LÀ DƯỢC SĨ DIỄM PHÚC</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#24B7AB]/30 shadow-xs">
+                <img
+                  src={IMAGES.pharmacyLogo}
+                  alt="Logo Nhà thuốc Minh Khôi"
+                  className="w-5 h-5 object-contain"
+                />
+                <span className="text-xs font-bold text-[#162425]">Nhà Thuốc Minh Khôi</span>
+              </div>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#162425] leading-[1.25] tracking-tight">
-              Từ một dược sĩ truyền thống đến hành trình <span className="text-[#24B7AB]">làm chủ công nghệ</span> và xây dựng <span className="text-[#128A83]">cộng đồng dược sĩ thời đại mới</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#162425] leading-[1.3] tracking-tight">
+              <span>Tôi không sinh ra để làm công nghệ.</span>{' '}
+              <span className="block mt-2 sm:mt-2.5">
+                Tôi chỉ là một dược sĩ không muốn mình và đồng nghiệp{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#128A83] to-[#24B7AB] font-black underline decoration-[#5BEA68] decoration-4 underline-offset-8">
+                  bị bỏ lại phía sau
+                </span>{' '}
+                trong thời đại mới.
+              </span>
             </h1>
 
             {/* Subheadline & Context */}
             <div className="space-y-4 text-base sm:text-lg text-[#5A6F6C] leading-relaxed">
-              <p className="font-semibold text-[#162425]">
-                Tôi tin rằng tương lai của nhà thuốc không chỉ dừng lại ở việc bán thuốc cắt liều đơn thuần.
+              <p className="font-semibold text-[#162425] text-lg sm:text-xl border-l-4 border-[#24B7AB] pl-3.5 py-0.5">
+                Tôi tin rằng tương lai của nhà thuốc <span className="text-rose-600 font-extrabold underline decoration-rose-300">không thể dừng lại</span> ở việc chỉ bán thuốc cắt liều đơn thuần.
               </p>
-              <p className="p-4 rounded-xl bg-white border border-[#D5E4E1] shadow-xs text-sm sm:text-base text-[#162425]">
-                Đó là sự kết hợp chuẩn mực giữa{' '}
-                <strong className="text-[#24B7AB] font-bold">chuyên môn dược lâm sàng</strong> –{' '}
-                <strong className="text-[#128A83] font-bold">chăm sóc sức khỏe chủ động</strong> –{' '}
-                <strong className="text-[#24B7AB] font-bold">công nghệ & AI</strong> –{' '}
-                <strong className="text-[#162425] font-bold">chiến lược tư vấn combo liệu trình</strong>.
-              </p>
-              <p className="text-sm sm:text-base text-[#5A6F6C]">
-                Hiện nay tôi đang trực tiếp phát triển <strong className="text-[#24B7AB]">Nhà Thuốc Minh Khôi</strong>, đồng hành cùng cộng đồng <strong className="text-[#162425]">Y Dược Online CaniCoach – AmHapy</strong> và hỗ trợ các đồng nghiệp dược sĩ xây dựng mô hình vận hành hiện đại, khoa học và bền vững.
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border-2 border-[#24B7AB]/30 shadow-sm text-sm sm:text-base text-[#162425] space-y-2">
+                <div className="text-xs uppercase font-extrabold tracking-wider text-[#128A83] flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#24B7AB]" />
+                  <span>CÔNG THỨC CHUYỂN MÌNH THỰC CHIẾN:</span>
+                </div>
+                <div className="flex flex-wrap gap-2 text-xs sm:text-sm font-bold">
+                  <span className="px-3 py-1 rounded-lg bg-[#E8FBF0] text-[#128A83] border border-[#24B7AB]/30">
+                    🔬 Chuyên môn Dược Lâm Sàng
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-[#E8FBF0] text-[#128A83] border border-[#24B7AB]/30">
+                    🌿 Chăm sóc Sức Khỏe Chủ Động
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-[#172223] text-[#5BEA68]">
+                    ⚡ Đột phá Công nghệ & AI
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-[#24B7AB]/15 text-[#162425] border border-[#24B7AB]/40">
+                    💎 Combo Liệu Trình Giá Trị Cao
+                  </span>
+                </div>
+              </div>
+              <p className="text-sm sm:text-base text-[#5A6F6C] leading-relaxed">
+                Hiện nay tôi đang trực tiếp vận hành <strong className="text-[#162425] font-extrabold">Nhà Thuốc Minh Khôi</strong>, đồng hành xây dựng cộng đồng <strong className="text-[#128A83] font-extrabold">Y Dược Online CaniCoach – AmHapy</strong> với <span className="text-[#24B7AB] font-black underline decoration-[#5BEA68] decoration-2">hơn 20+ Dược sĩ đối tác</span> cùng phát triển mô hình kinh doanh số tinh gọn.
               </p>
             </div>
 
@@ -103,14 +133,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenGift }) => {
               />
 
               {/* Photo Overlay Badge */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#172223]/95 via-[#172223]/70 to-transparent p-5 text-white">
-                <div className="font-extrabold text-lg tracking-wide flex items-center gap-2">
-                  Dược Sĩ Diễm Phúc
-                  <CheckCircle2 className="w-4 h-4 text-[#5BEA68]" />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#172223]/95 via-[#172223]/75 to-transparent p-5 text-white">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-white p-1 shrink-0 shadow-md border border-white/20">
+                    <img
+                      src={IMAGES.pharmacyLogo}
+                      alt="Logo Nhà thuốc Minh Khôi"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <div className="font-extrabold text-lg tracking-wide flex items-center gap-2">
+                      Dược Sĩ Diễm Phúc
+                      <CheckCircle2 className="w-4 h-4 text-[#5BEA68]" />
+                    </div>
+                    <p className="text-xs text-white/90 font-medium">
+                      Đại học Y Dược TP.HCM • Sáng lập Nhà Thuốc Minh Khôi
+                    </p>
+                  </div>
                 </div>
-                <p className="text-xs text-white/85 font-medium">
-                  Đại học Y Dược TP.HCM • Sáng lập Nhà Thuốc Minh Khôi
-                </p>
               </div>
             </div>
 

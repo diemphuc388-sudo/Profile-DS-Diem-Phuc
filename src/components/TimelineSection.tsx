@@ -59,13 +59,19 @@ export const TimelineSection: React.FC = () => {
 
                   {/* Content Card */}
                   <div className="flex-1 bg-white group-hover:bg-[#F2F8F6]/60 p-5 sm:p-6 rounded-xl border border-[#D5E4E1] group-hover:border-[#24B7AB] shadow-xs group-hover:shadow-md transition-all">
-                    <div className="flex flex-wrap items-baseline gap-2 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="px-2.5 py-0.5 rounded-md bg-[#172223] text-white font-extrabold text-sm tracking-wider font-mono">
                         {item.year}
                       </span>
                       <h3 className="text-base sm:text-lg font-bold text-[#162425]">
                         {item.title}
                       </h3>
+                      {item.year === '2019' && (
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-[#24B7AB]/40 shadow-xs text-xs font-bold text-[#128A83]">
+                          <img src={IMAGES.pharmacyLogo} alt="Logo Nhà thuốc Minh Khôi" className="w-4 h-4 object-contain" />
+                          <span>Logo Minh Khôi</span>
+                        </div>
+                      )}
                     </div>
 
                     <p className="text-sm sm:text-base text-[#5A6F6C] leading-relaxed mb-3">

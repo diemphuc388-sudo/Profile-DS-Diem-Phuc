@@ -42,9 +42,9 @@ export const WhyAmHapySection: React.FC<WhyAmHapySectionProps> = ({ onOpenGift, 
           </div>
           
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#162425] leading-tight">
-            VÌ SAO TÔI LỰA CHỌN <br className="hidden sm:inline" />
+            Một lựa chọn giúp tôi <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#128A83] via-[#24B7AB] to-[#128A83]">
-              MÔ HÌNH AFFILIATE AMHAPY?
+              LÀM NGHỀ NHẸ HƠN VÀ ĐI XA HƠN
             </span>
           </h2>
 
@@ -140,16 +140,21 @@ export const WhyAmHapySection: React.FC<WhyAmHapySectionProps> = ({ onOpenGift, 
           </div>
 
           {/* Core Takeaway Highlight Box */}
-          <div className="mt-8 bg-[#172223] text-white p-6 sm:p-8 rounded-2xl shadow-md border border-[#334546] text-center space-y-3">
-            <div className="text-xs text-[#5BEA68] font-bold uppercase tracking-wider flex items-center justify-center gap-2">
+          <div className="mt-8 bg-gradient-to-br from-[#172223] via-[#1E2E2F] to-[#121B1C] text-white p-7 sm:p-9 rounded-2xl shadow-xl border-2 border-[#5BEA68]/40 text-center space-y-4 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#5BEA68]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="text-xs text-[#5BEA68] font-black uppercase tracking-widest flex items-center justify-center gap-2">
               <Sparkles className="w-4 h-4 text-[#5BEA68]" />
               GIÁ TRỊ CỐT LÕI TẠO NÊN SỰ KHÁC BIỆT
             </div>
-            <p className="text-base sm:text-xl font-bold max-w-4xl mx-auto leading-relaxed text-[#F3F7F5]">
-              “{AMHAPY_AFFILIATE_DATA.coreFocusQuote}”
+            <p className="text-lg sm:text-2xl font-black max-w-4xl mx-auto leading-relaxed text-[#F3F7F5]">
+              “Tôi có thể tập trung vào điều mình làm tốt nhất:{' '}
+              <span className="text-[#5BEA68] underline decoration-[#5BEA68]/60 underline-offset-4">học chuyên môn</span>,{' '}
+              <span className="text-[#5BEA68] underline decoration-[#5BEA68]/60 underline-offset-4">chia sẻ giá trị</span>,{' '}
+              <span className="text-[#5BEA68] underline decoration-[#5BEA68]/60 underline-offset-4">tư vấn và chăm sóc khách hàng</span>;{' '}
+              còn việc đóng gói & giao hàng đã được <span className="text-[#24B7AB] underline decoration-[#24B7AB]/60 underline-offset-4">hệ thống tự động hóa hỗ trợ 100%</span>.”
             </p>
             <div className="pt-2 text-xs sm:text-sm text-[#AABAB7]">
-              Người dược sĩ quay trở lại đúng vị trí danh dự: Người thầy thuốc tư vấn tận tâm và chăm sóc người bệnh từ tâm.
+              Người dược sĩ quay trở lại đúng vị trí danh dự: <strong className="text-white font-bold">Người thầy thuốc tư vấn tận tâm và chăm sóc người bệnh từ tâm</strong>.
             </div>
           </div>
         </div>
@@ -294,11 +299,11 @@ export const WhyAmHapySection: React.FC<WhyAmHapySectionProps> = ({ onOpenGift, 
                     0{idx + 1}
                   </span>
                   <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-bold">
-                    <span className="text-[#5A6F6C] bg-gray-100 px-2 py-0.5 rounded-md line-through decoration-red-400">
+                    <span className="text-red-500/80 bg-red-50 px-2.5 py-1 rounded-md line-through decoration-red-400 font-bold border border-red-100">
                       {shift.from}
                     </span>
-                    <ArrowRight className="w-4 h-4 text-[#24B7AB] shrink-0" />
-                    <span className="text-[#128A83] bg-[#E8FBF0] px-2.5 py-0.5 rounded-md font-extrabold">
+                    <ArrowRight className="w-4 h-4 text-[#128A83] shrink-0" />
+                    <span className="text-[#128A83] bg-[#E8FBF0] px-3 py-1 rounded-md font-black border border-[#24B7AB]/30 shadow-xs">
                       {shift.to}
                     </span>
                   </div>

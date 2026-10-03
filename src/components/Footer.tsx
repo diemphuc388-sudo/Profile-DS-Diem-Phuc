@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, Shield, ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
-import { CONTACT_INFO } from '../data/content';
+import { Phone, ArrowUp, Sparkles, MessageCircle } from 'lucide-react';
+import { CONTACT_INFO, IMAGES } from '../data/content';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -14,15 +14,21 @@ export const Footer: React.FC = () => {
           {/* Brand & Identity (5 cols) */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#24B7AB] flex items-center justify-center font-black text-lg text-white">
-                DP
+              <div className="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shadow-md border border-white/10 shrink-0">
+                <img
+                  src={IMAGES.pharmacyLogo}
+                  alt="Logo Nhà thuốc Minh Khôi"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <h4 className="text-lg font-bold tracking-wide text-white uppercase">
                   DƯỢC SĨ DIỄM PHÚC
                 </h4>
-                <p className="text-xs text-[#5BEA68] font-semibold">
-                  Nhà Thuốc Minh Khôi
+                <p className="text-xs text-[#5BEA68] font-bold flex items-center gap-1.5">
+                  <span>Nhà Thuốc Minh Khôi</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#5BEA68]"></span>
+                  <span className="text-[#AABAB7]">Dược Sĩ Công Nghệ</span>
                 </p>
               </div>
             </div>
@@ -66,7 +72,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#mo-hinh-amhapy" className="hover:text-[#5BEA68] transition-colors">
-                  Vì sao lựa chọn Affiliate AmHapy
+                  Một lựa chọn giúp làm nghề nhẹ hơn & đi xa hơn
                 </a>
               </li>
               <li>
@@ -100,16 +106,6 @@ export const Footer: React.FC = () => {
                 <span>Lên đầu trang</span>
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Medical & Knowledge Disclaimer */}
-        <div className="py-6 border-b border-white/10">
-          <div className="flex items-start gap-3 text-xs text-[#AABAB7]/70 leading-relaxed bg-white/5 p-4 rounded-xl border border-white/5">
-            <Shield className="w-4 h-4 text-[#5BEA68] shrink-0 mt-0.5" />
-            <p>
-              <strong>Khuyến cáo y khoa:</strong> “Nội dung trên website mang tính chia sẻ kiến thức, kinh nghiệm và định hướng chăm sóc sức khỏe. Không thay thế việc khám, chẩn đoán hoặc điều trị bởi bác sĩ và cơ sở y tế chuyên môn.”
-            </p>
           </div>
         </div>
 

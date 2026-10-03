@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Share2, Gift, Menu, X, Eye, Sparkles } from 'lucide-react';
-import { CONTACT_INFO } from '../data/content';
+import { CONTACT_INFO, IMAGES } from '../data/content';
 
 interface NavbarProps {
   onOpenShare: () => void;
@@ -42,15 +42,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenShare, onOpenGift, viewerC
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo / Name */}
         <a href="#hero" className="flex items-center gap-3 group" id="brand-logo-link">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#24B7AB] to-[#172223] flex items-center justify-center text-white font-black text-lg shadow-sm shadow-[#24B7AB]/20 group-hover:scale-105 transition-transform">
-            DP
+          <div className="w-11 h-11 rounded-xl bg-white p-1 border border-[#D5E4E1] shadow-xs group-hover:shadow-md group-hover:scale-105 transition-all flex items-center justify-center shrink-0">
+            <img
+              src={IMAGES.pharmacyLogo}
+              alt="Logo Nhà thuốc Minh Khôi"
+              className="w-full h-full object-contain"
+            />
           </div>
           <div>
             <div className="text-base sm:text-lg font-extrabold tracking-tight text-[#162425] group-hover:text-[#24B7AB] transition-colors leading-tight">
               DƯỢC SĨ DIỄM PHÚC
             </div>
-            <div className="text-xs text-[#128A83] font-semibold hidden sm:block">
-              Nhà Thuốc Minh Khôi • Dược Sĩ Công Nghệ
+            <div className="text-xs text-[#128A83] font-semibold hidden sm:flex items-center gap-1.5">
+              <span className="font-bold text-[#162425]">Nhà Thuốc Minh Khôi</span>
+              <span className="text-[#AABAB7]">•</span>
+              <span>Dược Sĩ Công Nghệ</span>
             </div>
           </div>
         </a>
@@ -130,6 +136,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenShare, onOpenGift, viewerC
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div id="mobile-menu-dropdown" className="lg:hidden bg-white border-b border-[#D5E4E1] px-4 pt-3 pb-6 space-y-3 shadow-lg">
+          <div className="flex items-center gap-2.5 pb-2.5 border-b border-[#D5E4E1]">
+            <img
+              src={IMAGES.pharmacyLogo}
+              alt="Logo Nhà thuốc Minh Khôi"
+              className="w-9 h-9 rounded-lg bg-white p-0.5 border border-[#D5E4E1] object-contain shadow-xs"
+            />
+            <div>
+              <div className="text-sm font-extrabold text-[#162425]">DƯỢC SĨ DIỄM PHÚC</div>
+              <div className="text-xs font-semibold text-[#128A83]">Nhà Thuốc Minh Khôi • Dược Sĩ Công Nghệ</div>
+            </div>
+          </div>
+
           <div className="flex items-center justify-between pb-2 border-b border-[#D5E4E1] text-xs font-medium text-[#128A83]">
             <span className="flex items-center gap-1.5">
               <Eye className="w-3.5 h-3.5 text-[#24B7AB]" />

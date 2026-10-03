@@ -57,14 +57,20 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 18px; /* Tăng 2 size từ mặc định 16px lên 18px giúp đọc rõ ràng, dễ nhìn */
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18.5px;
+    }
   }
   
   body {
     font-family: 'Be Vietnam Pro', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: #162425;
     background-color: #FFFFFF;
-    line-height: 1.65;
+    line-height: 1.7;
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,7 +85,7 @@
 
   p {
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: 1.7;
   }
 }
 
@@ -161,3 +167,22 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #128A83;
 }
+
+@keyframes progressWidth {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-progress-2s {
+  animation: progressWidth 2s linear forwards;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+

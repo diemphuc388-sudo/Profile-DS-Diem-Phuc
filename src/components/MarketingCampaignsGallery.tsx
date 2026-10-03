@@ -7,7 +7,10 @@ export const MarketingCampaignsGallery: React.FC = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<MarketingCampaignItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<'all' | 'minigame' | 'voucher' | 'poster' | 'event'>('all');
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const currentIndexRef = useRef<number>(currentIndex);
+  currentIndexRef.current = currentIndex;
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -48,6 +51,18 @@ export const MarketingCampaignsGallery: React.FC = () => {
     }
     setCurrentIndex(index);
   };
+
+  // Auto-scroll images every 2 seconds without needing to click next
+  useEffect(() => {
+    if (selectedPhoto || isPaused || filteredData.length <= 1) return;
+
+    const timer = setInterval(() => {
+      const nextIndex = (currentIndexRef.current + 1) % filteredData.length;
+      scrollToIndex(nextIndex);
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [selectedPhoto, isPaused, filteredData.length]);
 
   const handleNext = () => {
     if (filteredData.length === 0) return;
@@ -200,8 +215,12 @@ export const MarketingCampaignsGallery: React.FC = () => {
           </button>
         </div>
 
-        {/* Counter and Mini Next/Prev Buttons */}
-        <div className="flex items-center gap-2.5">
+        {/* Counter, Auto-run Indicator and Mini Next/Prev Buttons */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#24B7AB]/10 border border-[#24B7AB]/30 text-[#128A83] text-xs font-semibold">
+            <span className="w-2 h-2 rounded-full bg-[#24B7AB] animate-pulse" />
+            <span>Tự chạy 2s</span>
+          </div>
           <div className="text-xs text-[#5A6F6C] font-semibold bg-white px-3 py-1.5 rounded-lg border border-[#D5E4E1]">
             Ảnh <span className="font-bold text-[#128A83]">{currentIndex + 1}</span> / {filteredData.length}
           </div>
@@ -228,7 +247,13 @@ export const MarketingCampaignsGallery: React.FC = () => {
       </div>
 
       {/* ================= CAROUSEL VIEWPORT ================= */}
-      <div className="relative group/carousel">
+      <div 
+        className="relative group/carousel"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
         {/* Floating Left Button (Desktop) */}
         <button
           onClick={handlePrev}

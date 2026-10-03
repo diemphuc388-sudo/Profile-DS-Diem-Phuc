@@ -9,6 +9,8 @@ export const CONTACT_INFO = {
   zaloUrl: 'https://zalo.me/0985457179',
   zaloGroupUrl: 'https://zalo.me/g/ve9foxk4sdmb5qmuy9cq',
   pharmacy: 'Nhà Thuốc Minh Khôi',
+  pharmacyLogo: 'https://i.postimg.cc/sxJd8Lb6/Logo-Nha-thuoc-Minh-Khoi-(9).png',
+  pharmacyLogoUrl: 'https://postimg.cc/sxJd8Lb6',
   communities: 'Cộng đồng Y Dược Online CaniCoach – AmHapy',
   shareMessage: 'Khám phá câu chuyện chuyển đổi số ấn tượng của Dược sĩ Diễm Phúc: Từ dược sĩ truyền thống đến làm chủ công nghệ & xây dựng cộng đồng nhà thuốc hiện đại. Tham gia nhóm trao đổi & nhận quà tặng miễn phí: https://zalo.me/g/ve9foxk4sdmb5qmuy9cq'
 };
@@ -22,8 +24,12 @@ export const IMAGES = {
   community: 'https://i.postimg.cc/Jh34TsC5/Chat-GPT-Image-08-42-25-17-thg-9-2026-(5).png',
   team: 'https://i.postimg.cc/Z5vP2jWx/Anh-doi-nhom-Diem-Phuc.png',
   teamPostimgUrl: 'https://postimg.cc/CRYffGHR',
-  oldWayBanner: 'https://i.postimg.cc/BbxK0zJT/Anh-Chat-GPT-09-48-48-25-thg-9-2026.png',
-  oldWayBannerUrl: 'https://postimg.cc/kRg4Nf6G',
+  oldWayBanner: 'https://i.postimg.cc/5tSXc6pf/tu-om-hang-den-van-hanh-he-thong.png',
+  oldWayBannerUrl: 'https://postimg.cc/PLNXYfB7',
+  marketingFunnel: 'https://i.postimg.cc/SR1pQQ9X/z7735265384037-58c112545259c1dc7a6db63e58d846f1.jpg',
+  marketingFunnelUrl: 'https://postimages.org/',
+  pharmacyLogo: 'https://i.postimg.cc/sxJd8Lb6/Logo-Nha-thuoc-Minh-Khoi-(9).png',
+  pharmacyLogoUrl: 'https://postimg.cc/sxJd8Lb6',
   yhctClass: 'https://i.postimg.cc/mDZvXzjq/Lop-YHCT.jpg',
   brandingCoaching1: 'https://i.postimg.cc/gJBTgMnv/Huong-dan-cac-DS-trang-tri-lai-NT-va-dinh-vi-thuong-hieu.jpg',
   brandingCoaching2: 'https://i.postimg.cc/k4hpTjBQ/huong-dan-trang-tri-NT-dinh-vi-thuong-hieu.jpg',
@@ -139,6 +145,14 @@ export const GIFT_LIST = [
 ];
 
 export const SALES_PROOF_DATA: SalesProofItem[] = [
+  {
+    id: 'proof-marketing-funnel',
+    imageUrl: 'https://i.postimg.cc/SR1pQQ9X/z7735265384037-58c112545259c1dc7a6db63e58d846f1.jpg',
+    title: 'Áp dụng Phễu Marketing thu hút khách hàng tiềm năng đến quầy thuốc',
+    description: 'Chiến lược triển khai phễu marketing thu hút: Tiếp cận từ nhu cầu thực tế, tạo quà tặng tri ân, đo tầm soát miễn phí để chuyển đổi tự nhiên sang tư vấn combo giải pháp.',
+    tag: 'Phễu Marketing',
+    badge: 'Phễu Thu Hút'
+  },
   {
     id: 'proof-1',
     imageUrl: 'https://i.postimg.cc/L5gBqJ5m/1789388985472-812162723513100646-g6210195734194609676-1bdc62fbc9b50cdfcd2822ab61cfe664.jpg',
@@ -702,7 +716,7 @@ export const SAPA_TRIP_DATA: SapaTripItem = {
 };
 
 export const AMHAPY_AFFILIATE_DATA: AffiliateAmHapyData = {
-  title: 'Vì sao tôi lựa chọn mô hình Affiliate AmHapy?',
+  title: 'Một lựa chọn giúp tôi làm nghề nhẹ hơn và đi xa hơn',
   badge: 'MÔ HÌNH KINH DOANH SỐ • ĐỒNG HÀNH BỀN VỮNG',
   subtitle: 'Giải pháp kinh doanh nhẹ vốn, tối ưu vận hành và giải phóng áp lực ôm kho cho người dược sĩ hiện đại.',
   introStory: 'Có lẽ chính trải nghiệm từng phải ôm một kho hàng rất lớn khiến tôi đặc biệt quan tâm đến một mô hình kinh doanh nhẹ vốn và phù hợp hơn với thời đại số.',

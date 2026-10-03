@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, ZoomIn, X, ChevronLeft, ChevronRight, Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { PHARMACY_HISTORY_DATA } from '../data/content';
+import { PHARMACY_HISTORY_DATA, IMAGES } from '../data/content';
 import { PharmacyHistoryItem } from '../types';
 
 export const PharmacyHistoryGallery: React.FC = () => {
@@ -33,11 +33,23 @@ export const PharmacyHistoryGallery: React.FC = () => {
   return (
     <div id="lich-su-nha-thuoc" className="mt-16 sm:mt-20 pt-12 border-t border-[#D5E4E1]">
       {/* Header */}
-      <div className="max-w-3xl mx-auto text-center space-y-3 mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F2F8F6] border border-[#D5E4E1] text-[#128A83] text-xs font-bold uppercase tracking-wider">
-          <Calendar className="w-3.5 h-3.5 text-[#24B7AB]" />
-          HÌNH ẢNH THỰC TẾ NHÀ THUỐC MINH KHÔI
+      <div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
+        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-white border border-[#24B7AB]/30 shadow-xs hover:shadow-md transition-all">
+          <img
+            src={IMAGES.pharmacyLogo}
+            alt="Logo Nhà thuốc Minh Khôi"
+            className="w-10 h-10 object-contain p-0.5 rounded-lg bg-white border border-[#D5E4E1] shadow-xs"
+          />
+          <div className="text-left">
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#128A83] block">
+              Thương hiệu & Cơ sở thực tế
+            </span>
+            <span className="text-sm sm:text-base font-black text-[#162425] block">
+              NHÀ THUỐC MINH KHÔI
+            </span>
+          </div>
         </div>
+
         <h3 className="text-xl sm:text-3xl font-extrabold text-[#162425] tracking-tight">
           HÀNH TRÌNH TỪ KHI MỚI HÌNH THÀNH ĐẾN NAY <br />
           <span className="text-[#24B7AB] font-mono">(2019 – 2023 – 2025)</span>
@@ -200,8 +212,9 @@ export const PharmacyHistoryGallery: React.FC = () => {
                 </p>
               </div>
 
-              <div className="shrink-0 text-xs font-semibold text-gray-400">
-                Nhà Thuốc Minh Khôi
+              <div className="shrink-0 flex items-center gap-1.5 text-xs font-bold text-gray-700 bg-gray-50 px-2.5 py-1 rounded-lg border border-gray-200">
+                <img src={IMAGES.pharmacyLogo} alt="Logo" className="w-4 h-4 object-contain" />
+                <span>Nhà Thuốc Minh Khôi</span>
               </div>
             </div>
           </div>

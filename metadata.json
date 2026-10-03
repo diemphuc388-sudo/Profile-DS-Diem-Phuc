@@ -1,6 +1,6 @@
 {
   "name": "Remix Dược Sĩ Diễm Phúc – Đồng Hành Xây Dựng Nhà Thuốc Hiện Đại",
-  "description": "Trang cá nhân chính thức của Dược sĩ Diễm Phúc. Hành trình từ dược sĩ truyền thống đến ứng dụng AI, công nghệ và xây dựng cộng đồng nhà thuốc hiện đại.",
+  "description": "Tôi không sinh ra để làm công nghệ. Tôi chỉ là một dược sĩ không muốn mình và đồng nghiệp bị bỏ lại phía sau trong thời đại mới. Trang cá nhân chính thức của Dược sĩ Diễm Phúc.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

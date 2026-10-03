@@ -43,35 +43,38 @@ export const BreakthroughSection: React.FC = () => {
           {/* Left: Story text & What I lacked (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             <div className="bg-[#203032] p-6 sm:p-8 rounded-2xl border border-[#334546] space-y-4">
-              <div className="flex items-center gap-3 text-sm font-semibold text-[#5BEA68]">
+              <div className="flex items-center gap-3 text-sm sm:text-base font-semibold text-[#5BEA68]">
                 <Lightbulb className="w-5 h-5" />
                 <span>Bước ngoặt định mệnh năm 2025</span>
               </div>
-              <p className="text-base text-[#AABAB7] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#AABAB7] leading-relaxed">
                 Năm 2025, tôi tham gia chương trình <strong className="text-white">“Xóa mù vi tính”</strong> của cộng đồng <strong>Y Dược Online CaniCoach</strong>.
               </p>
               <div className="pt-2">
-                <p className="text-xs uppercase tracking-widest text-[#24B7AB] font-bold">
-                  Và lần này tôi thực sự bừng tỉnh:
+                <p className="text-xs uppercase tracking-widest text-[#5BEA68] font-black flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#5BEA68]" />
+                  <span>KHOẢNH KHẮC THỰC SỰ BỪNG TỈNH:</span>
                 </p>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-wide mt-1">
-                  “ĐÂY CHÍNH LÀ THỨ MÌNH ĐANG THIẾU.”
+                <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#172223] via-[#128A83]/30 to-[#172223] border-2 border-[#5BEA68] shadow-lg shadow-[#5BEA68]/15 mt-2">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#5BEA68] to-[#24B7AB] tracking-wide block">
+                    “ĐÂY CHÍNH LÀ THỨ MÌNH ĐANG THIẾU!”
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* What I was missing: Tags grid */}
             <div className="space-y-3">
-              <p className="text-sm font-bold uppercase tracking-wider text-white/80">
-                Tôi không thiếu thêm một khóa học chuyên môn. Thứ tôi thực sự thiếu là:
+              <p className="text-sm font-extrabold uppercase tracking-wider text-white">
+                Tôi <span className="text-red-400 underline decoration-red-400">không hề thiếu</span> thêm một khóa học chuyên môn lý thuyết. Thứ tôi thực sự thiếu là:
               </p>
               <div className="flex flex-wrap gap-2.5">
                 {missingElements.map((item, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#203032] hover:bg-[#24B7AB] text-white font-bold text-xs sm:text-sm border border-[#334546] transition-all duration-200 shadow-xs"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#24B7AB]/15 hover:bg-[#24B7AB] text-white font-extrabold text-xs sm:text-sm border border-[#24B7AB]/50 transition-all duration-200 shadow-sm"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#5BEA68]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#5BEA68]" />
                     {item}
                   </span>
                 ))}
@@ -84,11 +87,11 @@ export const BreakthroughSection: React.FC = () => {
                 <DollarSign className="w-5 h-5" />
                 <span>QUYẾT ĐỊNH ĐẦU TƯ VÀO VIPCOACH ĐỂ CHUYỂN ĐỔI</span>
               </div>
-              <p className="text-sm sm:text-base text-[#AABAB7] leading-relaxed">
+              <p className="text-base sm:text-lg text-[#AABAB7] leading-relaxed">
                 Đó không phải một quyết định nhỏ. Nhưng tôi nhận ra một chân lý sâu sắc:
               </p>
-              <blockquote className="p-4 rounded-xl bg-[#128A83]/20 border-l-4 border-[#24B7AB] text-sm sm:text-base font-semibold text-white leading-relaxed">
-                “Chi phí cho việc học một con đường mới có thể nhỏ hơn rất nhiều so với cái giá phải trả khi tiếp tục đi theo một mô hình không còn phù hợp.”
+              <blockquote className="p-4 sm:p-5 rounded-xl bg-[#128A83]/20 border-l-4 border-[#5BEA68] text-base sm:text-lg font-semibold text-white leading-relaxed">
+                “Chi phí cho việc học một con đường mới có thể <mark className="bg-[#5BEA68]/20 text-[#5BEA68] font-black px-2 py-0.5 rounded border border-[#5BEA68]/30">nhỏ hơn rất nhiều</mark> so với <mark className="bg-red-500/25 text-red-300 font-black px-2 py-0.5 rounded border border-red-500/40">cái giá phải trả</mark> khi tiếp tục đi theo một mô hình không còn phù hợp.”
               </blockquote>
             </div>
           </div>
